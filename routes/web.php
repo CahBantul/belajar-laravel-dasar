@@ -22,3 +22,7 @@ Route::get('/nozami', fn () => "Hello Nozami");
 Route::redirect("/youtube", "/nozami");
 
 Route::fallback(fn () => "404 by Nozami");
+
+Route::view('/hello', "hello", ["name" => "nozami"]);
+
+Route::view('/hello-world', 'hello.world', ["name" => "ajitama"]);
