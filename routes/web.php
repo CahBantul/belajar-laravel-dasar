@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/nozami', fn () => "Hello Nozami");
+
+Route::redirect("/youtube", "/nozami");
+
+Route::fallback(fn () => "404 by Nozami");
