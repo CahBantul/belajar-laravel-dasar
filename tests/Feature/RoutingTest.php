@@ -24,6 +24,11 @@ class RoutingTest extends TestCase
             ->assertSeeText('404 by Nozami');
     }
 
+    public function testFallbackPost() : void {
+        $this->post('/tidak-ada')
+            ->assertSeeText('salah');
+    }
+
     public function testRouteParameter() : void {
         $this->get('/products/1')
             ->assertSeeText('product 1');
