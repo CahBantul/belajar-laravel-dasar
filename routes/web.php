@@ -70,3 +70,6 @@ Route::get('/response/type/download', [ResponseController::class, "responseDownl
 Route::get('/cookie/set', [CookieController::class, "createCookie"]);
 Route::get('/cookie/get', [CookieController::class, "getCookie"]);
 Route::get('/cookie/clear', [CookieController::class, "clearCookie"]);
+
+Route::get('/middleware/api', fn () => "Ok")->middleware(["contoh:NZM,401"]);
+Route::get('/middleware/group', fn () => "GROUP")->middleware(["nzm"]);
