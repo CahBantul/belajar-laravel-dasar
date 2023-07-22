@@ -7,6 +7,7 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\ResponseController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +85,11 @@ Route::middleware(["contoh:NZM,401"])->prefix("/middleware")->group(function () 
 
 Route::get('/form', [FormController::class, "index"]);
 Route::post('/form', [FormController::class, "store"]);
+
+Route::get('/url/current', function () {
+    return URL::full();
+});
+
+Route::get('/url/action', function () {
+    return action([FormController::class, "index"]);
+});
