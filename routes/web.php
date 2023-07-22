@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CookieController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\ResponseController;
@@ -73,3 +74,6 @@ Route::get('/cookie/clear', [CookieController::class, "clearCookie"]);
 
 Route::get('/middleware/api', fn () => "Ok")->middleware(["contoh:NZM,401"]);
 Route::get('/middleware/group', fn () => "GROUP")->middleware(["nzm"]);
+
+Route::get('/form', [FormController::class, "index"]);
+Route::post('/form', [FormController::class, "store"]);
