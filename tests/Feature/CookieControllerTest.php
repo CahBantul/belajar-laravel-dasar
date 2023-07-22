@@ -26,12 +26,4 @@ class CookieControllerTest extends TestCase
                 "isMember" => true
             ]);
     }
-
-    public function testClearCookie(): void
-    {
-        $response = $this->get("/cookie/clear");
-        dd($response->assertJson([
-            "user-Id" => "Nozami"
-        ]));
-    }
 }
